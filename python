@@ -1,0 +1,18 @@
+import cv2
+import face_recognition
+from simple_facerec import SimpleFacerec
+
+
+sfr = SimpleFacerec()
+sfr.load_encoding_images("images/")
+
+
+
+img2 = cv2.imread("edf98.jpg")
+rgb_img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
+
+ # Detect Faces
+face_locations, face_names = sfr.detect_known_faces(rgb_img2)
+
+
+print("Result: ", face_names)

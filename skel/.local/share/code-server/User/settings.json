@@ -1,0 +1,22 @@
+{
+  "editor.tabSize": 2,
+  "telemetry.telemetryLevel": "off",
+  "gitlens.graph.statusBar.enabled": false,
+  "gitlens.menus": {
+    "scm": {
+      "graph": false
+    },
+    "scmRepositoryInline": {
+      "graph": false
+    },
+    "scmRepository": {
+      "graph": false
+    }
+  },
+  "workbench.colorTheme": "Andromeda",
+  "editor.cursorWidth": 2,
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.fontFamily": "MesloLGS NF",
+  "editor.fontLigatures": true
+}
