@@ -17,6 +17,7 @@ RUN apt-get update \
     nano \
     git \
     git-lfs \
+    openjdk-17-jdk \
     procps \
     openssh-client \
     sudo \
@@ -60,6 +61,9 @@ COPY skel/.local/share/code-server/User /home/coder/.local/share/code-server/Use
 COPY skel/.p10k.zsh /home/coder/
 COPY vscode-cutomisation  /usr/lib/code-server/src/browser/media
 RUN chmod 777 /home/coder/.local/share/code-server/User/*.json
+RUN chown coder:coder /home/coder/.local/share/code-server/User/*.json
+RUN chown coder:coder /home/coder/.local/share/code-server/User
+
   ## Include custom fonts
 RUN sed -i 's|</head>|	<link rel="preload" href="{{BASE}}/_static/src/browser/media/fonts/MesloLGS-NF-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">\n	</head>|g' /usr/lib/code-server/lib/vscode/out/vs/code/browser/workbench/workbench.html\
   && sed -i 's|</head>|	<link rel="preload" href="{{BASE}}/_static/src/browser/media/fonts/MesloLGS-NF-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">\n	</head>|g'  /usr/lib/code-server/lib/vscode/out/vs/code/browser/workbench/workbench.html\
